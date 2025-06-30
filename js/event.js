@@ -12,6 +12,12 @@ const categoryLinks = document.querySelectorAll(".event-categories a");
 let currentPage = 1;
 const eventsPerPage = 9;
 let currentCategory = "all";
+const urlParams = new URLSearchParams(window.location.search);
+const urlCategory = urlParams.get("category");
+if (urlCategory) {
+  currentCategory = urlCategory;
+}
+
 let currentMaxPrice = parseInt(priceRange.value);
 
 // 🔹 Lấy từ khóa tìm kiếm từ URL nếu có

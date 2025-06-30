@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Bán Hàng</title>
+    <link rel="stylesheet" href="Css/style.css" />
+    <link rel="stylesheet" href="Css/index.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/banners/original.png" alt="Logo Shop" />
+          </a>
+        </div>
+        <button class="hamburger" aria-label="Mở menu" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+        <nav class="main-menu">
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="event.html">Sự Kiện</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="search">
+            <form action="event.html" method="GET">
+              <input type="text" name="keyword" placeholder="Tìm kiếm..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+          <div class="account">
+            <a href="account.html"id="user-icon"><i class="fas fa-user"></i></a>
+          </div>
+          
+        </div>
+      </div>
+    </header>
+
+    <section class="slider-container">
+      <!-- Slider -->
+<!-- Start Hero Slider Section-->
+    <div class="hero-slider-section">
+        <!-- Slider main container -->
+        <div class="hero-slider-active swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Start Hero Single Slider Item -->
+                <div class="hero-single-slider-item swiper-slide">
+                    <!-- Hero Slider Image -->
+                    <div class="hero-slider-bg">
+                        <img src="img/nghien-cuu-khoa-hoc-sinh-vien-truong-dai-hoc-cmc-19.jpg" alt="">
+                    </div>
+                    <!-- Hero Slider Content -->
+                    <div class="hero-slider-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="hero-slider-content">
+                                        <a href="event.html" class="cta-button">Tham gia ngay </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Hero Single Slider Item -->
+                <!-- Start Hero Single Slider Item -->
+                <div class="hero-single-slider-item swiper-slide">
+                    <!-- Hero Slider Image -->
+                    <div class="hero-slider-bg">
+                        <img src="img/1-van-lang-17030396662872128757935.jpg" alt="">
+                    </div>
+                    <!-- Hero Slider Content -->
+                    <div class="hero-slider-wrapper">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-auto">
+                                    <div class="hero-slider-content">
+                                        <a href="event.html" class="cta-button">Tham gia ngay </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- End Hero Single Slider Item -->
+            </div>
+        </div>
+    </div> 
+    <!-- End Hero Slider Section-->
+    </section>
+
+    <main>
+      <!-- Phần giới thiệu với 4 ảnh và text -->
+      <section class="features">
+        <div class="container">
+          <h2 class="section-title">Tại sao chọn chúng tôi?</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="img/banners/su_kien_phong_phu.png" alt="Đa dạng" />
+              </div>
+              <h3>SỰ KIỆN ĐA DẠNG</h3>
+              <p>
+                Chúng tôi tổ chức nhiều loại sự kiện khác nhau như hội thảo, workshop, networking, triển lãm với nội dung phong phú, phù hợp với nhiều lĩnh vực.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="img/banners/thoi_gian_linh_hoat.png" alt="Thời gian" />
+              </div>
+              <h3>THỜI GIAN LINH HOẠT</h3>
+              <p>
+                Lịch trình được thiết kế linh hoạt, phù hợp với các khung giờ trong tuần, đảm bảo thuận tiện cho người tham dự.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="img/banners/service-promo-7.png" alt="An toàn" />
+              </div>
+              <h3>ĐĂNG KÝ AN TOÀN</h3>
+              <p>
+               Hệ thống đăng ký sự kiện bảo mật, thanh toán trực tuyến an toàn, xác nhận nhanh chóng qua email hoặc SMS.
+              </p>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <img src="img/banners/service-promo-4.png" alt="Quà tặng" />
+              </div>
+              <h3>QUÀ TẶNG HẤP DẪN</h3>
+              <p>
+                Người tham dự nhận được voucher, tài liệu chuyên môn và các phần quà lưu niệm độc quyền từ ban tổ chức.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<div class="event-section">
+  <!-- TIÊU ĐỀ SỰ KIỆN NỔI BẬT -->
+  <div class="featured-events">
+    <h2>Sự kiện nổi bật</h2>
+  </div>
+  <div class="event-grid" id="featured-events-container">
+  <!-- Sự kiện nổi bật sẽ được render tự động ở đây -->
+  </div>
+  </div>
+</div>
+
+<!-- Câu hỏi thường gặp --------------------------------->
+        <!-- faq_area_Start -->
+    <div class="faq_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="serction_title_large mb-95">
+                        <h3>
+                            Frequently Ask
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+
+                                        <img src="img/banners/info.png" alt=""> Tôi có thể hủy đăng ký sự kiện nếu không tham gia được không?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion"
+                                style="">
+                                <div class="card-body">
+                                    Bạn nên kiểm tra chính sách hủy đăng ký của sự kiện. Nhiều sự kiện cho phép hủy miễn phí trong một khoảng thời gian nhất định trước ngày diễn ra.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        <img src="img/banners/info.png" alt="">Sự kiện có yêu cầu đăng ký trước không?
+                                            
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                                data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    Thông thường, các sự kiện sẽ yêu cầu đăng ký trước để đảm bảo chỗ ngồi và chuẩn bị tài liệu cần thiết cho người tham dự.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        <img src="img/banners/info.png" alt=""> Tôi có nhận được chứng nhận khi tham dự sự kiện không?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion" style="">
+                                <div class="card-body">
+                                    Một số sự kiện (đặc biệt là hội thảo, khóa đào tạo) sẽ cấp chứng nhận tham dự, hãy hỏi rõ khi đăng ký.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading_4">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse"
+                                        data-target="#collapse_4" aria-expanded="false" aria-controls="collapse_4">
+                                        <img src="img/banners/info.png" alt=""> Tham dự sự kiện có mất phí không?
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="collapse_4" class="collapse" aria-labelledby="heading_4" data-parent="#accordion"
+                                style="">
+                                <div class="card-body">
+                                    Tùy vào loại sự kiện. Có sự kiện hoàn toàn miễn phí, nhưng cũng có những sự kiện yêu cầu mua vé hoặc đóng phí đăng ký.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- faq_area_end -->
+    <!-- End câu hỏi thường gặp -->
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>Thông tin liên hệ</h3>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ,
+                Thành phố HCM
+              </li>
+              <li><i class="fas fa-phone"></i> 0123.456.789</li>
+              <li><i class="fas fa-envelope"></i> info@shopbanhang.com</li>
+              <li>
+                <i class="fas fa-clock"></i> 8h00 - 21h00 các ngày trong tuần
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3>Danh mục sự kiện</h3>
+            <div id="footer-categories" class="footer-categories">
+              <div class="loading">Đang tải danh mục...</div>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h3>Giới thiệu</h3>
+            <p>
+              Shop Bán Hàng cung cấp các sản phẩm chất lượng cao với giá cả phải
+              chăng. Chúng tôi cam kết mang đến trải nghiệm mua sắm tốt nhất cho
+              khách hàng.
+            </p>
+          </div>
+          <div class="footer-column">
+            <h3>Kết nối với chúng tôi</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="payment-methods">
+              <h4>Phương thức thanh toán</h4>
+              <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Shop Bán Hàng. Tất cả quyền được bảo lưu.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/eventDL.js"></script>
+    <script src="js/index.js"></script>
+  <script src="js/account.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </body>
+</html>

@@ -3,7 +3,7 @@ const events = eventList;
 
 // ✅ Lấy ID từ URL
 const urlParams = new URLSearchParams(window.location.search);
-const eventId = parseInt(urlParams.get("id")); // Phải parseInt vì dữ liệu id là số
+const eventId = parseInt(urlParams.get("id")); // ID là số
 
 // ✅ Hàm định dạng thời gian
 function formatDateTime(datetimeStr) {
@@ -20,11 +20,10 @@ function formatDateTime(datetimeStr) {
 // ✅ Tìm sự kiện theo ID
 const event = events.find(e => e.id === eventId);
 
-// ✅ Nếu không tìm thấy sự kiện
 if (!event) {
   document.getElementById("event-title").textContent = "Không tìm thấy sự kiện.";
 } else {
-  // ✅ Đổ dữ liệu ra trang
+  // ✅ Hiển thị thông tin sự kiện
   document.getElementById("event-img").src = event.image;
   document.getElementById("event-title").textContent = event.title;
   document.getElementById("event-start").textContent = formatDateTime(event.start);
@@ -35,7 +34,7 @@ if (!event) {
   document.getElementById("event-seats").textContent = `${event.bookedSeats}/${event.totalSeats}`;
   document.getElementById("register-link").href = `register-event.html?id=${event.id}`;
 
-  // ✅ Trạng thái sự kiện
+  // ✅ Xác định trạng thái sự kiện
   const now = new Date();
   const startTime = new Date(event.start);
   const endTime = new Date(event.end);
@@ -51,7 +50,7 @@ if (!event) {
 
   document.getElementById("event-status").textContent = status;
 
-  // ✅ PHẦN ĐÁNH GIÁ – chỉ hiển thị nếu đã kết thúc
+  // ✅ PHẦN ĐÁNH GIÁ – hiển thị nếu sự kiện đã kết thúc
   if (now > endTime) {
     const reviewSection = document.getElementById("review-section");
     const reviewList = document.getElementById("review-list");
@@ -59,11 +58,10 @@ if (!event) {
 
     reviewSection.style.display = "block";
 
-    // Lấy đánh giá từ localStorage
     const storageKey = "event-reviews-" + event.id;
     let reviews = JSON.parse(localStorage.getItem(storageKey)) || [];
 
-    // Nếu chưa có thì tạo mẫu mặc định
+    // Nếu chưa có đánh giá nào thì thêm đánh giá mẫu (1 lần duy nhất)
     if (reviews.length === 0) {
       reviews = [
         { name: "Nguyễn Văn A", stars: "5", content: "Sự kiện rất chuyên nghiệp, mình học được nhiều điều." },
@@ -73,24 +71,47 @@ if (!event) {
       localStorage.setItem(storageKey, JSON.stringify(reviews));
     }
 
+    // ✅ Hiển thị tất cả đánh giá
     renderReviews(reviews);
 
-    // Gửi đánh giá mới
-    reviewForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      const name = document.getElementById("reviewer-name").value.trim();
-      const stars = document.getElementById("review-stars").value;
-      const content = document.getElementById("review-content").value.trim();
+    // ✅ Kiểm tra xem người dùng có được phép gửi đánh giá không
+    const currentUser = JSON.parse(localStorage.getItem("currentUser")) || {};
+    const joinedEvents = currentUser.suKienDaDangKy || [];
 
-      if (!name || !stars || !content) return;
+    const canReview = currentUser.username && Array.isArray(joinedEvents) && joinedEvents.includes(eventId);
 
-      const newReview = { name, stars, content };
-      reviews.push(newReview);
-      localStorage.setItem(storageKey, JSON.stringify(reviews));
-      renderReviews(reviews);
-      reviewForm.reset();
-    });
+    if (canReview) {
+      // ✅ Cho phép gửi đánh giá
+      reviewForm.style.display = "block";
 
+      reviewForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const stars = document.getElementById("review-stars").value;
+        const content = document.getElementById("review-content").value.trim();
+        const name = currentUser.fullname || currentUser.username || "Ẩn danh";
+
+        if (!stars || !content) {
+          alert("Vui lòng nhập đầy đủ đánh giá.");
+          return;
+        }
+
+        const newReview = { name, stars, content };
+        reviews.push(newReview);
+        localStorage.setItem(storageKey, JSON.stringify(reviews));
+        renderReviews(reviews);
+        reviewForm.reset();
+      });
+    } else {
+      // ❌ Không được phép → Ẩn form + hiện thông báo
+      reviewForm.style.display = "none";
+      const warning = document.createElement("p");
+      warning.textContent = "🔒 Chỉ người đã đăng nhập và tham gia sự kiện mới được đánh giá.";
+      warning.style.color = "gray";
+      reviewForm.parentNode.insertBefore(warning, reviewForm);
+    }
+
+    // ✅ Hàm render các đánh giá
     function renderReviews(reviews) {
       reviewList.innerHTML = "";
       reviews.forEach((r) => {

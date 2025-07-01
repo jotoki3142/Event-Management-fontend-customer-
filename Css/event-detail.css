@@ -91,54 +91,94 @@
 
 /*================*/
 /* PHẦN BÌNH LUẬN*/
-.event-review-container {
+/* PHẦN ĐÁNH GIÁ SỰ KIỆN */
+#review-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
   margin-top: 40px;
-  padding: 20px;
-  background: #f9f9f9;
-  border-radius: 8px;
   max-width: 800px;
-  margin-inline: auto;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: Arial, sans-serif;
 }
 
-.event-review-container h2,
-.event-review-container h3 {
-  margin-bottom: 12px;
+#review-section h3 {
+  font-size: 24px;
   color: #333;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-#review-list .review-item {
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
+#review-form label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #444;
 }
 
-#review-list .review-item:last-child {
-  border-bottom: none;
-}
-
-#review-form {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-#review-form input,
 #review-form select,
-#review-form textarea,
-#review-form button {
-  padding: 8px;
-  font-size: 14px;
-  border-radius: 4px;
+#review-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+}
+
+#review-form select:focus,
+#review-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 #review-form button {
   background-color: #007bff;
   color: white;
+  padding: 10px 25px;
+  font-size: 16px;
   border: none;
+  border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 #review-form button:hover {
   background-color: #0056b3;
+}
+
+/* Danh sách đánh giá */
+#review-list {
+  margin-top: 30px;
+}
+
+#review-list h4 {
+  font-size: 20px;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.review-item {
+  background-color: #f9f9f9;
+  padding: 15px 20px;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.review-item p {
+  margin: 5px 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.review-item strong {
+  font-weight: bold;
+  color: #333;
 }

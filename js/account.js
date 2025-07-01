@@ -193,13 +193,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (username === "lequankhach123" && password === "12345678") {
          // ✅ Lưu thông tin người dùng đầy đủ
-    const userData = {
-      username: "lequankhach123",
-      fullname: "Lê Anh Quân",
-      phone: "0987654321",
-      address: "123 Đường ABC, TP.HCM"
-    };
-      localStorage.setItem("currentUser", JSON.stringify({ username }));
+const userData = {
+  username: "lequankhach123",
+  fullname: "Lê Anh Quân",
+  phone: "0987654321",
+  address: "123 Đường ABC, TP.HCM"
+};
+localStorage.setItem("currentUser", JSON.stringify(userData));
+
       alert("Đăng nhập thành công!");
       window.location.href = "index.html";
     } else {

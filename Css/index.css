@@ -373,3 +373,123 @@ main {
   }
 }
 /*HẾT PHẦN SỰ KIỆN NỔI BẬT*/
+
+/*DIỄN GIẢ NỔI BẬT*/
+/* Vùng tổng */
+.team-wrapper {
+  padding: 40px 20px;
+  background: #f6f6f6;
+  overflow-x: auto;
+}
+
+/* Dòng chứa tất cả diễn giả */
+.team-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap; /* Nếu không muốn wrap thì dùng: nowrap */
+}
+
+/* Card từng người */
+.team-single {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  text-align: center;
+  padding: 25px 20px 30px;
+  width: 250px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.team-single:hover {
+  transform: translateY(-5px);
+}
+
+/* Ảnh tròn */
+.team-img img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/* Zoom ảnh nhẹ khi hover */
+.team-img img:hover {
+  transform: scale(1.05);
+}
+
+/* Tên */
+.team-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 15px;
+  color: #000;
+}
+
+/* Chức danh (ẩn khi hover) */
+.team-title {
+  display: block;
+  color: #777;
+  font-size: 15px;
+  margin-top: 5px;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+.team-single:hover .team-title {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Mạng xã hội (ẩn mặc định) */
+.team-social {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-single:hover .team-social {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Từng icon */
+.team-social li {
+  display: inline-block;
+  margin: 0 6px;
+  transform: translateY(10px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.team-single:hover .team-social li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Icon link */
+.team-social a {
+  color: #333;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.team-social a:hover {
+  color: #b19361;
+}
+
+/* Tiêu đề vùng */
+.section-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+

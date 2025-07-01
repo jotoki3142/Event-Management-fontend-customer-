@@ -69,39 +69,40 @@
       </div>
     </div>
   </div>
+ 
   <!-- PHẦN ĐÁNH GIÁ -->
-<!-- PHẦN ĐÁNH GIÁ -->
-<div class="event-review-container" id="review-section" style="display: none;">
-  <!-- Form thêm bình luận -->
-  <h3>Gửi đánh giá của bạn</h3>
+<div id="review-section" style="display: none; margin-top: 40px;">
+  <h3>Đánh giá sự kiện</h3>
+
+  <!-- Form đánh giá -->
   <form id="review-form">
-    <label for="reviewer-name">Tên bạn:</label>
-    <input type="text" id="reviewer-name" required />
-
-    <label for="review-stars">Số sao:</label>
+    <label>Chọn số sao:</label><br>
     <select id="review-stars" required>
-      <option value="">Chọn sao</option>
-      <option value="5">5 sao</option>
-      <option value="4">4 sao</option>
-      <option value="3">3 sao</option>
-      <option value="2">2 sao</option>
-      <option value="1">1 sao</option>
-    </select>
+      <option value="">-- Chọn --</option>
+      <option value="5">5 - Tuyệt vời</option>
+      <option value="4">4 - Tốt</option>
+      <option value="3">3 - Bình thường</option>
+      <option value="2">2 - Tạm được</option>
+      <option value="1">1 - Tệ</option>
+    </select><br><br>
 
-    <label for="review-content">Bình luận:</label>
-    <textarea id="review-content" rows="4" required></textarea>
+    <label>Đánh giá chi tiết:</label><br>
+    <textarea id="review-content" rows="4" required></textarea><br><br>
 
     <button type="submit">Gửi đánh giá</button>
   </form>
 
-  <!-- Danh sách bình luận -->
-  <h2 style="margin-top: 40px;">Đánh giá từ người tham gia</h2>
-  <div id="review-list">
-    <!-- JavaScript sẽ chèn bình luận ở đây -->
+  <!-- Danh sách đánh giá -->
+  <div id="review-list" style="margin-top: 20px;">
+    <h4>Đánh giá từ người khác:</h4>
+    <!-- Các đánh giá sẽ render vào đây -->
   </div>
 </div>
 
-</div>
+
+
+
+
 
     </main>
 

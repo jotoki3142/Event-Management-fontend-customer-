@@ -1,173 +1,198 @@
 /* Reset styles only for elements inside main */
-main * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
 
-/* Main container styling */
-main {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  line-height: 1.6;
-}
+    .intro-banner {
+      position: relative;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 10
+    }
 
-/* Product Showcase Section */
-main .product-showcase {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-bottom: 50px;
-}
+    .intro-banner img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
 
-main .product-card {
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 20px;
-  text-align: center;
-}
+    .intro-banner:hover img {
+      opacity: 0.5; /* Fade image on hover */
+    }
 
-main .product-image {
-  width: 100%;
-  height: 500px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 5px;
-  margin-bottom: 15px;
-}
+    .intro-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4); /* Semi-transparent overlay */
+      z-index: 2;
+    }
 
-main .product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .intro-banner .container {
+      position: relative;
+      z-index: 3;
+    }
 
-main .product-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background-color: rgba(255, 165, 0, 0.7);
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-}
+    .intro-banner h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-main .product-title {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #333;
-}
+    .intro-banner p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
 
-main .product-description {
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 20px;
-  padding: 0 15px;
-  color: #555;
-}
+    .btn-primary {
+      display: inline-block;
+      padding: 12px 30px;
+      background: #ff6f61;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.3s ease;
+      z-index: 3;
+    }
 
-main .buy-button {
-  display: inline-block;
-  padding: 8px 20px;
-  background-color: #fff;
-  color: #333;
-  border: 1px solid #ccc;
-  text-decoration: none;
-  font-size: 14px;
-  border-radius: 3px;
-  transition: all 0.3s;
-}
+    .btn-primary:hover {
+      background: #e55a50;
+      transform: translateY(-3px);
+    }
 
-main .buy-button:hover {
-  background-color: #f5f5f5;
-}
+    /* About & Contact Section */
+    .about-contact {
+      padding: 60px 0;
+      background: #f9f9f9;
+    }
 
-/* Village Info Section */
-main .main-header {
-  text-align: center;
-  margin: 50px 0 30px 0;
-}
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
 
-main .main-header h3 {
-  color: #555;
-  font-size: 14px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-}
+    .about, .contact {
+      padding: 20px;
+    }
 
-main .main-header h1 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
+    .about h2, .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
 
-main .content-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-}
+    .about p, .contact p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 15px;
+    }
 
-main .left-content {
-  flex: 1;
-  min-width: 300px;
-}
+    .contact p strong {
+      color: #007bff;
+    }
 
-main .right-content {
-  flex: 1;
-  min-width: 300px;
-}
+    .map iframe {
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
 
-main .image-container {
-  width: 100%;
-  margin: 20px 0;
-}
+    /* Commitment Section */
+    .commitment {
+      padding: 60px 0;
+      background: white;
+    }
 
-main .image-container img {
-  width: 100%;
-  max-height: 750px;
-  object-fit: cover;
-}
+    .commitment h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      color: #333;
+    }
 
-main .section-title {
-  text-align: center;
-  margin: 30px 0 20px 0;
-}
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
 
-main .section-title h2 {
-  font-size: 18px;
-  text-transform: uppercase;
-  color: #555;
-  margin-bottom: 5px;
-}
+    .commit-item {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-main .section-title h3 {
-  font-size: 20px;
-  color: #333;
-}
+    .commit-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
 
-main .feature-list {
-  margin-top: 20px;
-}
+    .commit-item img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
 
-main .feature-item {
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
+    .commit-item h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #007bff;
+    }
 
-main p {
-  margin-bottom: 15px;
-  font-size: 14px;
-  text-align: justify;
-}
+    .commit-item p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
 
-@media (max-width: 768px) {
-  main .content-wrapper,
-  main .product-showcase {
-    flex-direction: column;
-  }
-}
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .grid-2, .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .intro-banner h1 {
+        font-size: 2rem;
+      }
+
+      .intro-banner p {
+        font-size: 1rem;
+      }
+
+      .commit-item {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro-banner {
+        padding: 50px 15px;
+        min-height: 300px;
+      }
+
+      .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+      }
+
+      .about h2, .contact h2, .commitment h2 {
+        font-size: 1.8rem;
+      }
+    }

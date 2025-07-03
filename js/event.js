@@ -7,39 +7,43 @@ const pagination = document.getElementById("pagination");
 const priceRange = document.getElementById("priceRange");
 const priceValue = document.getElementById("priceValue");
 const categoryLinks = document.querySelectorAll(".event-categories a");
+const locationFilter = document.getElementById("locationFilter");
 
 // 🔹 Biến trạng thái
 let currentPage = 1;
 const eventsPerPage = 9;
 let currentCategory = "all";
+let currentMaxPrice = parseInt(priceRange.value);
+let currentLocation = "";
+
+// 🔹 Lấy giá trị từ URL (nếu có)
 const urlParams = new URLSearchParams(window.location.search);
 const urlCategory = urlParams.get("category");
+const searchKeyword = urlParams.get("keyword")?.trim().toLowerCase() || "";
+
 if (urlCategory) {
   currentCategory = urlCategory;
 }
 
-let currentMaxPrice = parseInt(priceRange.value);
-
-// 🔹 Lấy từ khóa tìm kiếm từ URL nếu có
-let searchKeyword = new URLSearchParams(window.location.search).get("keyword")?.trim().toLowerCase() || "";
-
 // 🔹 Hàm hiển thị sự kiện
 function renderEvents() {
-  // Lọc dữ liệu theo danh mục, giá, và từ khóa (nếu có)
+  // Lọc sự kiện theo danh mục, giá, từ khóa và thành phố
   let filtered = events.filter(e => {
     const matchCategory = currentCategory === "all" || e.category === currentCategory;
     const matchPrice = parseInt(e.price) <= currentMaxPrice;
     const matchKeyword = !searchKeyword || e.title.toLowerCase().includes(searchKeyword);
-    return matchCategory && matchPrice && matchKeyword;
+    const matchLocation = !currentLocation || e.location.toLowerCase().includes(currentLocation);
+    return matchCategory && matchPrice && matchKeyword && matchLocation;
   });
 
+  // Phân trang
   const totalPages = Math.ceil(filtered.length / eventsPerPage);
   if (currentPage > totalPages) currentPage = 1;
 
   const start = (currentPage - 1) * eventsPerPage;
   const paginated = filtered.slice(start, start + eventsPerPage);
 
-  // Hiển thị các sự kiện
+  // Hiển thị sự kiện
   eventGrid.innerHTML = paginated.map(event => `
     <div class="event-card">
       <div class="event-image">
@@ -64,7 +68,7 @@ function renderEvents() {
   renderPagination(totalPages);
 }
 
-// 🔹 Hàm tạo các nút phân trang
+// 🔹 Tạo các nút phân trang
 function renderPagination(totalPages) {
   pagination.innerHTML = "";
   for (let i = 1; i <= totalPages; i++) {
@@ -79,23 +83,29 @@ function renderPagination(totalPages) {
   }
 }
 
-// 🔹 Bắt sự kiện thay đổi thanh lọc giá
+// 🔹 Lắng nghe thay đổi thanh lọc giá
 priceRange.addEventListener("input", () => {
   currentMaxPrice = parseInt(priceRange.value);
   priceValue.textContent = currentMaxPrice.toLocaleString("vi-VN") + "₫";
   renderEvents();
 });
 
-// 🔹 Bắt sự kiện chọn danh mục
+// 🔹 Lắng nghe chọn danh mục
 categoryLinks.forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
     currentCategory = link.dataset.category;
     currentPage = 1;
-    searchKeyword = ""; // ✅ Xóa từ khóa tìm kiếm khi chọn danh mục
     renderEvents();
   });
 });
 
-// 🔹 Gọi khi trang vừa tải xong
+// 🔹 Lắng nghe chọn thành phố
+locationFilter.addEventListener("change", () => {
+  currentLocation = locationFilter.value.trim().toLowerCase();
+  currentPage = 1;
+  renderEvents();
+});
+
+// 🔹 Gọi lần đầu khi trang tải
 renderEvents();

@@ -14,8 +14,9 @@
       
     }
     .event-sidebar h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
+  margin-top: 24px;
+  margin-bottom: 8px;
+  font-size: 18px;
     }
     .event-categories {
       list-style: none;
@@ -89,6 +90,24 @@ box-sizing: border-box;
     .btn-register {
       background: #28a745;
     }
+/*===Tìm kiếm sự kiện theo thành phố*/
+    .event-sidebar select {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.event-sidebar select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
 
     /*================*/
     /* phần chuyển trang 1,2,3 */

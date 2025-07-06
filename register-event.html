@@ -4,12 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shop Bán Hàng</title>
-    
     <link rel="stylesheet" href="Css/register-event.css" />
     <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/index.css" />
     <link rel="stylesheet" href="Css/account.css" />
-    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -24,10 +22,10 @@
           </a>
         </div>
         <button class="hamburger" aria-label="Mở menu" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="main-menu">
           <ul>
             <li><a href="index.html">Trang chủ</a></li>
@@ -49,134 +47,118 @@
         </div>
       </div>
     </header>
-<!--=================-->
-<main class="event-booking">
-<div class="containers">
+    <!--=================-->
+    <main class="event-booking">
+      <div class="containers">
         <h1>Đặt vé sự kiện</h1>
-        
         <div class="event-info">
-            <div class="event-details">
-              <h2 id="event-title">Đang tải...</h2>
-                <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
-                <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
-                <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
-                <p><strong>Giá vé:</strong> <span id="event-price"></span></p>
-
-            </div>
+          <div class="event-details">
+            <h2 id="event-title">Đang tải...</h2>
+            <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
+            <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
+            <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
+            <p><strong>Giá vé:</strong> <span id="event-price"></span></p>
+          </div>
         </div>
         <!-- sơ đồ chỗ ngồi + button Đặt vé -->
         <div class="seating-chart">
-            <h2 class="seating-title">Sơ đồ chỗ ngồi</h2>
-            <div class="stage">SÂN KHẤU</div>
-            
-            <div class="legend">
-                <div class="legend-item">
-                    <div class="legend-color available"></div>
-                    <span>Còn trống</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color booked"></div>
-                    <span>Đã đặt</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color selected"></div>
-                    <span>Đang chọn</span>
-                </div>
+          <h2 class="seating-title">Sơ đồ chỗ ngồi</h2>
+          <div class="stage">SÂN KHẤU</div>
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color available"></div>
+              <span>Còn trống</span>
             </div>
-            
-            <div class="seats-containers" id="seatsContainers"></div>
-            
-            <button id="bookButton" type="button">Đặt vé</button>
+            <div class="legend-item">
+              <div class="legend-color booked"></div>
+              <span>Đã đặt</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color selected"></div>
+              <span>Đang chọn</span>
+            </div>
+          </div>
+          <div class="seats-containers" id="seatsContainers"></div>
+          <button id="bookButton" type="button">Đặt vé</button>
         </div>
-           <!-- Chọn phương thức thanh toán-->
-            <div class="booking-summary" id="bookingSummary">
-                <h3>Thông tin đặt vé</h3>
-                <div class="summary-item"><strong>Họ tên:</strong> <span id="summaryName">Nguyễn Văn A</span></div>
-                <div class="summary-item"><strong>Số điện thoại:</strong> <span id="summaryPhone">0912345678</span></div>
-                <div class="summary-item"><strong>Số ghế:</strong> <span id="summarySeats"></span></div>
-                <div class="summary-item"><strong>Tổng tiền:</strong> <span id="summaryTotal"></span></div>
-                
-                <div class="countdown-timer" id="countdown">
-                    Thời gian còn lại để thanh toán: <span id="time">03:00</span>
-                </div>
-                
-                <div class="payment-methods">
-                    <h4>Phương thức thanh toán</h4>
-                    <div class="payment-method">
-                        <input type="radio" id="momo" name="payment" value="momo" checked>
-                        <label for="momo">Ví điện tử MoMo</label>
-                        <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo.png" alt="MoMo">
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="zalopay" name="payment" value="zalopay">
-                        <label for="zalopay">Ví điện tử ZaloPay</label>
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/ZaloPay-logo-0302019.png" alt="ZaloPay">
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="banking" name="payment" value="banking">
-                        <label for="banking">Chuyển khoản ngân hàng</label>
-                        <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="Banking">
-                    </div>
-                    <div class="payment-method">
-                        <input type="radio" id="cash" name="payment" value="cash">
-                        <label for="cash">Thanh toán tiền mặt tại cửa</label>
-                        <img src="https://cdn-icons-png.flaticon.com/512/1577/1577009.png" alt="Cash">
-                    </div>
-                </div>
-                
-                <div class="action-buttons">
-                    <button id="confirmButton" type="button">Thanh toán</button>
-                    <button id="cancelButton" type="button" style="background-color: #95a5a6;">Hủy bỏ</button>
-                </div>
+        <!-- Chọn phương thức thanh toán-->
+        <div class="booking-summary" id="bookingSummary">
+          <h3>Thông tin đặt vé</h3>
+          <div class="summary-item"><strong>Họ tên:</strong> <span id="summaryName">Nguyễn Văn A</span></div>
+          <div class="summary-item"><strong>Số điện thoại:</strong> <span id="summaryPhone">0912345678</span></div>
+          <div class="summary-item"><strong>Số ghế:</strong> <span id="summarySeats"></span></div>
+          <div class="summary-item"><strong>Tổng tiền:</strong> <span id="summaryTotal"></span></div>
+          <div class="countdown-timer" id="countdown">
+            Thời gian còn lại để thanh toán: <span id="time">03:00</span>
+          </div>
+          <div class="payment-methods">
+            <h4>Phương thức thanh toán</h4>
+            <div class="payment-method">
+              <input type="radio" id="momo" name="payment" value="momo" checked>
+              <label for="momo">Ví điện tử MoMo</label>
+              <img src="https://cdn.haitrieu.com/wp-content/uploads/2022/10/Logo-MoMo.png" alt="MoMo">
             </div>
-<!-- QR thanh toán-->
-<div class="payment-info" id="paymentInfo" style="display: none; text-align: center;">
-  <h2>Thanh toán</h2>
-  <img id="qr-img" src="" alt="QR Thanh toán" style="width: 200px; height: 200px;">
-  <p><strong>Ngân hàng:</strong> MBbank</p>
-  <p><strong>Số tài khoản:</strong> 0868807213</p>
-  <p><strong>Tổng tiền:</strong> <span id="paymentTotal"></span></p>
-  <p><strong>Nội dung:</strong> <span id="paymentNote"></span></p>
-  <button id="confirmPaymentButton">Xác nhận đã thanh toán</button>
-</div>
-
-
-             <!-- Hiển thị vé-->
-            <div class="ticket" id="ticket">
-                <div class="ticket-header">VÉ THAM DỰ SỰ KIỆN</div>
-                  <h2 id="event-title">Đang tải...</h2>
-                  <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
-                  <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
-                  <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
-                
-                <div class="ticket-code" id="ticketCode"></div>
-                
-               
-                <div class="ticket-info">
-                    <p><strong>Họ tên:</strong> <span id="ticketName"></span></p>
-                    <p><strong>Số ghế:</strong> <span id="ticketSeats"></span></p>
-                    <p><strong>Phương thức thanh toán:</strong> <span id="ticketPayment"></span></p>
-                    <p><strong>Ngày đặt vé:</strong> <span id="ticketDate"></span></p>
-                </div>
-                
-                <div class="action-buttons">
-                    <button class="btn-print" onclick="window.print()">In vé</button>
-                    <button class="btn-download" id="downloadTicket">Tải vé</button>
-                </div>
+            <div class="payment-method">
+              <input type="radio" id="zalopay" name="payment" value="zalopay">
+              <label for="zalopay">Ví điện tử ZaloPay</label>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/ZaloPay-logo-0302019.png" alt="ZaloPay">
             </div>
-        
-    </div>
-
-    <div class="overlay" id="overlay">
+            <div class="payment-method">
+              <input type="radio" id="banking" name="payment" value="banking">
+              <label for="banking">Chuyển khoản ngân hàng</label>
+              <img src="https://cdn-icons-png.flaticon.com/512/196/196566.png" alt="Banking">
+            </div>
+            <div class="payment-method">
+              <input type="radio" id="cash" name="payment" value="cash">
+              <label for="cash">Thanh toán tiền mặt tại cửa</label>
+              <img src="https://cdn-icons-png.flaticon.com/512/1577/1577009.png" alt="Cash">
+            </div>
+          </div>
+          <div class="action-buttons">
+            <button id="confirmButton" type="button">Thanh toán</button>
+            <button id="cancelButton" type="button" style="background-color: #95a5a6;">Hủy bỏ</button>
+          </div>
+        </div>
+        <!-- QR thanh toán-->
+        <div class="payment-info" id="paymentInfo" style="display: none; text-align: center;">
+          <h2>Thanh toán</h2>
+          <img id="qr-img" src="" alt="QR Thanh toán" style="width: 200px; height: 200px;">
+          <p><strong>Ngân hàng:</strong> MBbank</p>
+          <p><strong>Số tài khoản:</strong> 0868807213</p>
+          <p><strong>Tổng tiền:</strong> <span id="paymentTotal"></span></p>
+          <p><strong>Nội dung:</strong> <span id="paymentNote"></span></p>
+          <button id="confirmPaymentButton">Xác nhận đã thanh toán</button>
+        </div>
+        <!-- Hiển thị vé-->
+        <div class="ticket" id="ticket">
+          <div class="ticket-header">VÉ THAM DỰ SỰ KIỆN</div>
+          <h2 id="event-title">Đang tải...</h2>
+          <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
+          <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
+          <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
+          <div class="ticket-code" id="ticketCode"></div>
+          <div class="ticket-info">
+            <p><strong>Họ tên:</strong> <span id="ticketName"></span></p>
+            <p><strong>Số ghế:</strong> <span id="ticketSeats"></span></p>
+            <p><strong>Phương thức thanh toán:</strong> <span id="ticketPayment"></span></p>
+            <p><strong>Ngày đặt vé:</strong> <span id="ticketDate"></span></p>
+          </div>
+          <div class="action-buttons">
+            <button class="btn-print" onclick="window.print()">In vé</button>
+            <button class="btn-download" id="downloadTicket">Tải vé</button>
+          </div>
+        </div>
+      </div>
+      <div class="overlay" id="overlay">
         <div class="modal">
-            <h2>Hết thời gian thanh toán</h2>
-            <p>Rất tiếc, bạn đã không hoàn thành thanh toán trong thời gian quy định (3 phút).</p>
-            <p>Các ghế đã chọn đã được giải phóng và có thể được đặt bởi người khác.</p>
-            <button id="modalClose" style="margin-top: 20px;">Đóng</button>
+          <h2>Hết thời gian thanh toán</h2>
+          <p>Rất tiếc, bạn đã không hoàn thành thanh toán trong thời gian quy định (3 phút).</p>
+          <p>Các ghế đã chọn đã được giải phóng và có thể được đặt bởi người khác.</p>
+          <button id="modalClose" style="margin-top: 20px;">Đóng</button>
         </div>
-    </div>
+      </div>
     </main> 
-<!--===================-->
+    <!--===================-->
     <footer>
       <div class="container">
         <div class="footer-columns">
@@ -194,19 +176,26 @@
               </li>
             </ul>
           </div>
-
           <div class="footer-column">
             <h3>Danh mục sản phẩm</h3>
             <div id="footer-categories" class="footer-categories">
               <div class="loading">Đang tải danh mục...</div>
             </div>
           </div>
-
+          <div class="footer-column">
+            <h3>Thông tin của bạn</h3>
+            <ul class="account-footer-list">
+              <li><a href="my-account.html"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+              <li><a href="my-account.html"><i class="fas fa-lock"></i> Đổi mật khẩu</a></li>
+              <li><a href="my-account.html"><i class="fas fa-receipt"></i> Lịch sử giao dịch</a></li>
+              <li><a href="my-account.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+          </div>
           <div class="footer-column">
             <h3>Giới thiệu</h3>
             <p>
-            Trung tâm Sự Kiện mang đến những chương trình đa dạng,
-            hấp dẫn và chất lượng cao, đáp ứng nhu cầu giải trí, học tập và kết nối cộng đồng.
+              Trung tâm Sự Kiện mang đến những chương trình đa dạng,
+              hấp dẫn và chất lượng cao, đáp ứng nhu cầu giải trí, học tập và kết nối cộng đồng.
             </p>
           </div>
           <div class="footer-column">
@@ -230,7 +219,7 @@
           </div>
         </div>
         <div class="copyright">
-          <p>&copy; 2025 Shop Bán Hàng. Tất cả quyền được bảo lưu.</p>
+          <p>© 2025 Shop Bán Hàng. Tất cả quyền được bảo lưu.</p>
         </div>
       </div>
     </footer>
@@ -239,7 +228,5 @@
     <script src="js/eventDL.js"></script>
     <script src="js/register-event.js"></script>
     <script src="js/event-detail.js"></script>
-
-
   </body>
 </html>

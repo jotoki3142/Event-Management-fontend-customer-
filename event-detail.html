@@ -7,10 +7,7 @@
     <link rel="stylesheet" href="Css/style.css" />
     <link rel="stylesheet" href="Css/event-detail.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   </head>
   <body>
     <header>
@@ -21,10 +18,10 @@
           </a>
         </div>
         <button class="hamburger" aria-label="Mở menu" onclick="toggleMenu()">
-  <span></span>
-  <span></span>
-  <span></span>
-</button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <nav class="main-menu">
           <ul>
             <li><a href="index.html">Trang chủ</a></li>
@@ -46,64 +43,55 @@
         </div>
       </div>
     </header>
+
     <main>
-  <div class="event-detail-container">
-    <a href="index.html" class="back-link">← Quay lại</a>
+      <div class="event-detail-container">
+        <a href="index.html" class="back-link">← Quay lại</a>
 
-    <div class="event-detail-wrapper">
-      <div class="event-image">
-        <img id="event-img" src="" alt="Ảnh sự kiện">
+        <div class="event-detail-wrapper">
+          <div class="event-image">
+            <img id="event-img" src="" alt="Ảnh sự kiện" />
+          </div>
+          <div class="event-info">
+            <h1 id="event-title">Đang tải...</h1>
+            <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
+            <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
+            <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
+            <p><strong>Giá vé:</strong> <span id="event-price"></span></p>
+            <p><strong>Mô tả:</strong></p>
+            <p id="event-description"></p>
+            <p><strong>Ghế ngồi:</strong> <span id="event-seats"></span></p>
+            <p><strong>Trạng thái:</strong> <span id="event-status"></span></p>
+            <a href="#" id="register-link" class="btn-register">Đăng ký</a>
+          </div>
+        </div>
+
+        <div id="review-section" style="display: none; margin-top: 40px;">
+          <h3>Đánh giá sự kiện</h3>
+
+          <form id="review-form">
+            <label>Chọn số sao:</label><br />
+            <select id="review-stars" required>
+              <option value="">-- Chọn --</option>
+              <option value="5">5 - Tuyệt vời</option>
+              <option value="4">4 - Tốt</option>
+              <option value="3">3 - Bình thường</option>
+              <option value="2">2 - Tạm được</option>
+              <option value="1">1 - Tệ</option>
+            </select><br /><br />
+
+            <label>Đánh giá chi tiết:</label><br />
+            <textarea id="review-content" rows="4" required></textarea><br /><br />
+
+            <button type="submit">Gửi đánh giá</button>
+          </form>
+
+          <div id="review-list" style="margin-top: 20px;">
+            <h4>Đánh giá từ người khác:</h4>
+            <!-- Các đánh giá sẽ render vào đây -->
+          </div>
+        </div>
       </div>
-      <div class="event-info">
-        <h1 id="event-title">Đang tải...</h1>
-        <p><strong>Bắt đầu:</strong> <span id="event-start"></span></p>
-        <p><strong>Kết thúc:</strong> <span id="event-end"></span></p>
-        <p><strong>Địa điểm:</strong> <span id="event-location"></span></p>
-        <p><strong>Giá vé:</strong> <span id="event-price"></span></p>
-        <p><strong>Mô tả:</strong></p>
-        <p id="event-description"></p>
-        <p><strong>Ghế ngồi:</strong> <span id="event-seats"></span></p>
-        <p><strong>Trạng thái:</strong> <span id="event-status"></span></p>
-        <a href="#" id="register-link" class="btn-register">Đăng ký</a>
-
-      </div>
-    </div>
-  </div>
- 
-  <!-- PHẦN ĐÁNH GIÁ -->
-<div id="review-section" style="display: none; margin-top: 40px;">
-  <h3>Đánh giá sự kiện</h3>
-
-  <!-- Form đánh giá -->
-  <form id="review-form">
-    <label>Chọn số sao:</label><br>
-    <select id="review-stars" required>
-      <option value="">-- Chọn --</option>
-      <option value="5">5 - Tuyệt vời</option>
-      <option value="4">4 - Tốt</option>
-      <option value="3">3 - Bình thường</option>
-      <option value="2">2 - Tạm được</option>
-      <option value="1">1 - Tệ</option>
-    </select><br><br>
-
-    <label>Đánh giá chi tiết:</label><br>
-    <textarea id="review-content" rows="4" required></textarea><br><br>
-
-    <button type="submit">Gửi đánh giá</button>
-  </form>
-
-  <!-- Danh sách đánh giá -->
-  <div id="review-list" style="margin-top: 20px;">
-    <h4>Đánh giá từ người khác:</h4>
-    <!-- Các đánh giá sẽ render vào đây -->
-  </div>
-</div>
-
-
-
-
-
-
     </main>
 
     <footer>
@@ -112,15 +100,10 @@
           <div class="footer-column">
             <h3>Thông tin liên hệ</h3>
             <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ,
-                Thành phố HCM
-              </li>
+              <li><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, Thành phố HCM</li>
               <li><i class="fas fa-phone"></i> 0123.456.789</li>
               <li><i class="fas fa-envelope"></i> info@shopbanhang.com</li>
-              <li>
-                <i class="fas fa-clock"></i> 8h00 - 21h00 các ngày trong tuần
-              </li>
+              <li><i class="fas fa-clock"></i> 8h00 - 21h00 các ngày trong tuần</li>
             </ul>
           </div>
 
@@ -132,12 +115,20 @@
           </div>
 
           <div class="footer-column">
-            <h3>Giới thiệu</h3>
-            <p>
-           Trung tâm Sự Kiện mang đến những chương trình đa dạng,
-            hấp dẫn và chất lượng cao, đáp ứng nhu cầu giải trí, học tập và kết nối cộng đồng.
-            </p>
+            <h3>Thông tin của bạn</h3>
+            <ul class="account-footer-list">
+              <li><a href="my-account.html"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+              <li><a href="my-account.html"><i class="fas fa-lock"></i> Đổi mật khẩu</a></li>
+              <li><a href="my-account.html"><i class="fas fa-receipt"></i> Lịch sử giao dịch</a></li>
+              <li><a href="my-account.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
           </div>
+
+          <div class="footer-column">
+            <h3>Giới thiệu</h3>
+            <p>Trung tâm Sự Kiện mang đến những chương trình đa dạng, hấp dẫn và chất lượng cao, đáp ứng nhu cầu giải trí, học tập và kết nối cộng đồng.</p>
+          </div>
+
           <div class="footer-column">
             <h3>Kết nối với chúng tôi</h3>
             <div class="social-links">
@@ -163,11 +154,11 @@
         </div>
       </div>
     </footer>
+
     <script src="js/script.js"></script>
     <script src="js/index.js"></script>
-     <script src="js/eventDL.js"></script>
+    <script src="js/eventDL.js"></script>
     <script src="js/event-detail.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-   
   </body>
 </html>

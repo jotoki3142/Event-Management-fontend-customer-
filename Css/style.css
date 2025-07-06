@@ -514,3 +514,27 @@ footer:hover {
     padding: 10px 20px;
   }
 }
+
+/*THÔNG TIN CÁ NHÂN Ở PHẦN FOOTER*/
+.account-footer-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.account-footer-list li {
+  margin-bottom: 8px;
+}
+
+.account-footer-list a {
+  color: #f3e9e9;
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.account-footer-list a i {
+  color: #a29e97;
+}

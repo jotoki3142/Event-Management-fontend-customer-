@@ -135,45 +135,40 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Mật khẩu xác nhận không khớp!");
         return;
       }
-
-      
-
-    
     });
 });
+
 //------------------//
 // chọn giới tính (nam, nữ )trong đăng ký//
 
-  const selected = document.getElementById('gender-selected');
-  const options = document.getElementById('gender-options');
-  const hiddenInput = document.getElementById('gender-value');
+const selected = document.getElementById('gender-selected');
+const options = document.getElementById('gender-options');
+const hiddenInput = document.getElementById('gender-value');
 
-  selected.addEventListener('click', () => {
-    const isOpen = options.style.display === 'block';
-    options.style.display = isOpen ? 'none' : 'block';
-    selected.classList.toggle('open', !isOpen);
+selected.addEventListener('click', () => {
+  const isOpen = options.style.display === 'block';
+  options.style.display = isOpen ? 'none' : 'block';
+  selected.classList.toggle('open', !isOpen);
+});
+
+document.querySelectorAll('.option').forEach(option => {
+  option.addEventListener('click', () => {
+    selected.innerHTML = `${option.textContent} <span class="arrow">▾</span>`;
+    hiddenInput.value = option.getAttribute('data-value');
+    options.style.display = 'none';
+    selected.classList.remove('open');
   });
+});
 
-  document.querySelectorAll('.option').forEach(option => {
-    option.addEventListener('click', () => {
-      selected.innerHTML = `${option.textContent} <span class="arrow">&#9662;</span>`;
-      hiddenInput.value = option.getAttribute('data-value');
-      options.style.display = 'none';
-      selected.classList.remove('open');
-    });
-  });
+document.addEventListener('click', function (e) {
+  if (!document.getElementById('gender-wrapper').contains(e.target)) {
+    options.style.display = 'none';
+    selected.classList.remove('open');
+  }
+});
 
-  document.addEventListener('click', function (e) {
-    if (!document.getElementById('gender-wrapper').contains(e.target)) {
-      options.style.display = 'none';
-      selected.classList.remove('open');
-    }
-  });
-
-
-
-  //========================//
-  //KHI ĐĂNG NHẬP THÌ QUAY VỀ TRANG CHỦ //
+//========================//
+//KHI ĐĂNG NHẬP THÌ QUAY VỀ TRANG CHỦ //
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
 
@@ -192,14 +187,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const password = document.getElementById("login-password").value.trim();
 
     if (username === "lequankhach123" && password === "12345678") {
-         // ✅ Lưu thông tin người dùng đầy đủ
-const userData = {
-  username: "lequankhach123",
-  fullname: "Lê Anh Quân",
-  phone: "0987654321",
-  address: "123 Đường ABC, TP.HCM"
-};
-localStorage.setItem("currentUser", JSON.stringify(userData));
+      // ✅ Lưu thông tin người dùng đầy đủ
+      const userData = {
+        username: "lequankhach123",
+        fullname: "Lê Anh Quân",
+        phone: "0987654321",
+        address: "123 Đường ABC, TP.HCM"
+      };
+      localStorage.setItem("currentUser", JSON.stringify(userData));
 
       alert("Đăng nhập thành công!");
       window.location.href = "index.html";
@@ -208,10 +203,3 @@ localStorage.setItem("currentUser", JSON.stringify(userData));
     }
   });
 });
-
-
-
-
-
-
-

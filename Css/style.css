@@ -21,7 +21,7 @@ body {
 
 /* Header with color transition effect */
 header {
-  background-color: #4eb4ef;
+  background-color: #8ebad3;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -30,7 +30,7 @@ header {
 }
 
 header:hover {
-  background-color: #44a2f5;
+  background-color: #86b0c8;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
 }
 

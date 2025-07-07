@@ -1,0 +1,325 @@
+ 
+ <!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Bán Hàng</title>
+    <link rel="stylesheet" href="Css/style.css" />
+  
+    <link rel="stylesheet" href="Css/about1.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="img/banners/original.png" alt="Logo Shop" />
+          </a>
+        </div>
+        <button class="hamburger" aria-label="Mở menu" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="main-menu">
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="event.html">Sự kiện</a></li>
+            <li><a href="about.html">Giới thiệu</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <div class="search">
+            <form action="event.html" method="GET">
+              <input type="text" name="keyword" placeholder="Tìm kiếm..." />
+              <button type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+          <div class="account">
+            <a href="account.html"><i class="fas fa-user"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+ <!-- Hero Section -->
+    <section class="hero flex items-center justify-center text-center text-white">
+        <div class="container mx-auto px-6 animate-fade-in">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Câu Chuyện Của Chúng Tôi</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Sáng tạo - Chuyên nghiệp - Tận tâm</p>
+            <a href="#about" class="bg-amber-500 hover:bg-amber-600 text-white font-semibold py-3 px-8 rounded-full transition duration-300 inline-block">Khám Phá</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-blue-600">Về Chúng Tôi</h2>
+                    <p class="text-lg mb-6">EventPro được thành lập năm 2010 với sứ mệnh mang đến những trải nghiệm sự kiện đáng nhớ nhất cho khách hàng.</p>
+                    <p class="mb-6">Với hơn 12 năm kinh nghiệm trong ngành tổ chức sự kiện, chúng tôi tự hào đã thực hiện thành công hơn 500 sự kiện lớn nhỏ khác nhau, từ hội nghị doanh nghiệp, tiệc cưới sang trọng đến các chương trình ra mắt sản phẩm.</p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">500+ Sự kiện</div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">50+ Đối tác</div>
+                        <div class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full">98% Hài lòng</div>
+                    </div>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 inline-block">Liên Hệ Ngay</a>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/795d8adb-4d50-47d8-8f80-e23ba23ab10f.png" alt="Nhóm EventPro đang làm việc tại một sự kiện với khách hàng trong không gian văn phòng hiện đại" class="rounded-lg shadow-xl w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-600">Đội Ngũ Chuyên Gia</h2>
+                <p class="text-lg max-w-2xl mx-auto">Đội ngũ giàu kinh nghiệm với niềm đam mê tạo nên những sự kiện hoàn hảo</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="team-card bg-white p-6 rounded-lg shadow-md transition duration-300 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4bd28fa3-4e95-404a-85e5-8fc6a94734d8.png" alt="Giám đốc sáng tạo nam với phong cách chuyên nghiệp, đeo kính và mỉm cười" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Lê Anh Quân</h3>
+                    <p class="text-blue-600 mb-3">Giám Đốc Sáng Tạo</p>
+                    <p class="text-gray-600">12 năm kinh nghiệm tổ chức sự kiện lớn</p>
+                </div>
+                <div class="team-card bg-white p-6 rounded-lg shadow-md transition duration-300 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a403df8f-f44a-4f89-b5ca-2070158860fb.png" alt="Trưởng phòng tổ chức sự kiện nữ với nụ cười thân thiện và trang phục công sở" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Bá Duy Anh</h3>
+                    <p class="text-blue-600 mb-3">Trưởng Phòng Tổ Chức</p>
+                    <p class="text-gray-600">Chuyên gia logistics sự kiện</p>
+                </div>
+                <div class="team-card bg-white p-6 rounded-lg shadow-md transition duration-300 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7e894d06-5f57-4db1-89a9-1f758cbc4a0a.png" alt="Chuyên gia thiết kế sự kiện trẻ tuổi với phong cách cá tính và sáng tạo" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Lê Quang Minh</h3>
+                    <p class="text-blue-600 mb-3">Chuyên Gia Thiết Kế</p>
+                    <p class="text-gray-600">Thiết kế không gian sự kiện độc đáo</p>
+                </div>
+                <div class="team-card bg-white p-6 rounded-lg shadow-md transition duration-300 text-center">
+                    <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/447a2320-ae3a-449c-905b-1ef28babf915.png" alt="Quản lý khách hàng nữ với phong cách chuyên nghiệp và năng động" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Tạ Quang Minh</h3>
+                    <p class="text-blue-600 mb-3">Quản Lý Khách Hàng</p>
+                    <p class="text-gray-600">Chăm sóc khách hàng tận tâm</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-600">Giá Trị Cốt Lõi</h2>
+                <p class="text-lg max-w-2xl mx-auto">Những nguyên tắc làm nên thương hiệu EventPro</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="value-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sáng Tạo</h3>
+                    <p class="text-gray-600">Luôn đổi mới và sáng tạo trong mọi ý tưởng tổ chức sự kiện</p>
+                </div>
+                <div class="value-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Chuyên Nghiệp</h3>
+                    <p class="text-gray-600">Quy trình làm việc bài bản với đội ngũ giàu kinh nghiệm</p>
+                </div>
+                <div class="value-card bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg text-center">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-blue-100 rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tận Tâm</h3>
+                    <p class="text-gray-600">Đặt khách hàng làm trung tâm trong mọi quyết định</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-blue-600">Sự Kiện Tiêu Biểu</h2>
+                <p class="text-lg max-w-2xl mx-auto">Những dự án đã làm nên thương hiệu EventPro</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md bg-white">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e060d9a5-ceee-45dd-8cca-1f01de63100d.png" alt="Hội nghị doanh nghiệp quy mô lớn với sân khấu hiện đại và hàng trăm ghế ngồi" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Hội Nghị Thường Niên</h3>
+                        <p class="text-gray-600">Tổ chức cho tập đoàn ABC với 500 khách mời</p>
+                    </div>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md bg-white">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9bfb7028-7ebe-41a6-bb09-a1c59a271da4.png" alt="Tiệc cưới sang trọng với hoa tươi và ánh sáng ấm áp trong không gian rộng" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tiệc Cưới Cao Cấp</h3>
+                        <p class="text-gray-600">Concept "Đêm phương Đông" tại khách sạn 5 sao</p>
+                    </div>
+                </div>
+                <div class="gallery-item overflow-hidden rounded-lg shadow-md bg-white">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8fcfee5c-b281-430b-9a70-f6d4bc1e9174.png" alt="Sự kiện ra mắt sản phẩm công nghệ với màn hình LED lớn và ánh sáng màu xanh" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Ra Mắt Sản Phẩm</h3>
+                        <p class="text-gray-600">Trải nghiệm thực tế ảo cho dòng điện thoại mới</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Sẵn Sàng Tạo Nên Sự Kiện Đáng Nhớ?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Hãy để chúng tôi biến ý tưởng của bạn thành hiện thực</p>
+            <a href="contact.html" class="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-full transition duration-300 inline-block">Liên Hệ Ngay</a>
+        </div>
+    </section>
+ <footer>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('button').addEventListener('click', function() {
+            const nav = document.querySelector('.hidden.md\\:flex');
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('flex');
+            nav.classList.toggle('flex-col');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-16');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-white');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('space-y-4');
+            nav.classList.toggle('space-x-0');
+            nav.classList.toggle('shadow-md');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const btn = document.getElementById("mobileMenuButton");
+    const menu = document.getElementById("mobileMenu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  });
+</script>
+
+      <div class="container">
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h3>Thông tin liên hệ</h3>
+            <ul>
+              <li><i class="fas fa-map-marker-alt"></i> 123 Đường ABC, Quận XYZ, Thành phố HCM</li>
+              <li><i class="fas fa-phone"></i> 0123.456.789</li>
+              <li><i class="fas fa-envelope"></i> info@shopbanhang.com</li>
+              <li><i class="fas fa-clock"></i> 8h00 - 21h00 các ngày trong tuần</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Danh mục sự kiện</h3>
+            <div id="footer-categories" class="footer-categories">
+              <div class="loading">Đang tải danh mục...</div>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>Thông tin của bạn</h3>
+            <ul class="account-footer-list">
+              <li><a href="my-account.html"><i class="fas fa-user"></i> Thông tin cá nhân</a></li>
+              <li><a href="my-account.html"><i class="fas fa-lock"></i> Đổi mật khẩu</a></li>
+              <li><a href="my-account.html"><i class="fas fa-receipt"></i> Lịch sử giao dịch</a></li>
+              <li><a href="my-account.html"><i class="fas fa-sign-out-alt"></i> Đăng xuất</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Giới thiệu</h3>
+            <p>Trung tâm Sự Kiện mang đến những chương trình đa dạng, hấp dẫn và chất lượng cao, đáp ứng nhu cầu giải trí, học tập và kết nối cộng đồng.</p>
+          </div>
+          <div class="footer-column">
+            <h3>Kết nối với chúng tôi</h3>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+              <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="payment-methods">
+              <h4>Phương thức thanh toán</h4>
+              <div class="payment-icons">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fas fa-money-bill-wave"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2025 Shop Bán Hàng. Tất cả quyền được bảo lưu.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.tailwindcss.com"></script>
+   <script src="js/script.js"></script>
+    <script src="js/eventDL.js"></script>
+    
+  
+     
+
+  </body>
+</html>

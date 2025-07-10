@@ -157,9 +157,22 @@
             <!-- Lịch sử giao dịch -->
             <div class="section hidden" id="orders">
               <h2>Lịch sử giao dịch</h2>
-              <div id="orders-container" class="orders-container">
-                <div class="loading-spinner">Đang tải hóa đơn...</div>
-              </div>
+             <div id="orders-container" class="orders-container">
+  <table class="orders-table">
+    <thead>
+      <tr>
+        <th>Mã giao dịch</th>
+        <th>Tên sự kiện</th>
+        <th>Chỗ ngồi</th>
+        <th>Thời gian đặt</th>
+        <th>Tổng tiền</th>
+      </tr>
+    </thead>
+    <tbody id="orders-list">
+      <!-- Dữ liệu sẽ được thêm bằng JavaScript -->
+    </tbody>
+  </table>
+</div>
             </div>
 
             <!-- Đăng xuất -->

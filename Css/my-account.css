@@ -210,3 +210,20 @@ button {
   background-color: #15191d;
  transform: translateY(-2px);
 }
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.orders-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}

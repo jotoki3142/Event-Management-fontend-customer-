@@ -64,6 +64,16 @@ document.addEventListener("DOMContentLoaded", function () {
   if (cancelLogoutBtn) {
     cancelLogoutBtn.addEventListener("click", function () {
       logoutPopup.classList.remove("show");
+      // Chuyển về tab Thông tin cá nhân
+      // 1. Xóa active ở tất cả sidebar-item
+      document.querySelectorAll(".sidebar-item").forEach(i => i.classList.remove("active"));
+      // 2. Thêm active cho sidebar-item đầu tiên (Thông tin cá nhân)
+      const firstSidebar = document.querySelector('.sidebar-item[data-section="personal-info"]');
+      if (firstSidebar) firstSidebar.classList.add("active");
+      // 3. Ẩn tất cả section, chỉ hiện section Thông tin cá nhân
+      document.querySelectorAll(".section").forEach(section => section.classList.add("hidden"));
+      const personalInfoSection = document.getElementById("personal-info");
+      if (personalInfoSection) personalInfoSection.classList.remove("hidden");
     });
   }
 

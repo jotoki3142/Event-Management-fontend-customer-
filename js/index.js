@@ -30,22 +30,17 @@ document.addEventListener("DOMContentLoaded", function() {
 // Xử lý sự kiện khi nhấn vào icon người dùng
 document.addEventListener("DOMContentLoaded", function () {
   const userIcon = document.getElementById("user-icon");
+  // Kiểm tra cả 2 loại đăng nhập: API và tài khoản mẫu
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const authToken = localStorage.getItem("authToken");
 
-  if (currentUser) {
-    // Đổi tooltip hoặc nội dung nếu muốn
-    userIcon.title = "Đăng xuất";
-
-    userIcon.addEventListener("click", function (e) {
-      e.preventDefault();
-      const confirmLogout = confirm("Bạn có muốn đăng xuất không?");
-      if (confirmLogout) {
-        localStorage.removeItem("currentUser");
-        window.location.href = "account.html";
-      }
-    });
+  if (currentUser || authToken) {
+    // Nếu đã đăng nhập, chuyển đến trang thông tin cá nhân
+    userIcon.title = "Thông tin cá nhân";
+    userIcon.setAttribute("href", "my-account.html");
   } else {
     // Nếu chưa đăng nhập, chuyển sang trang đăng nhập
+    userIcon.title = "Đăng nhập";
     userIcon.setAttribute("href", "account.html");
   }
 });

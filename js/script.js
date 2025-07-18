@@ -48,4 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
     <a href="event.html?category=${cat}">${categoryNames[cat] || cat}</a>
   `).join("");
 });
+
+//=========================//
+// XỬ LÝ BIỂU TƯỢNG USER TRONG HEADER//
+//=========================//
+document.addEventListener("DOMContentLoaded", function () {
+  const userIcon = document.getElementById("user-icon");
+  if (userIcon) {
+    // Kiểm tra cả 2 loại đăng nhập: API và tài khoản mẫu
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    const authToken = localStorage.getItem("authToken");
+
+    if (currentUser || authToken) {
+      // Nếu đã đăng nhập, chuyển đến trang thông tin cá nhân
+      userIcon.title = "Thông tin cá nhân";
+      userIcon.setAttribute("href", "my-account.html");
+    } else {
+      // Nếu chưa đăng nhập, chuyển sang trang đăng nhập
+      userIcon.title = "Đăng nhập";
+      userIcon.setAttribute("href", "account.html");
+    }
+  }
+});
 //=========================//

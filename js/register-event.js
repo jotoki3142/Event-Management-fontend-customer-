@@ -48,20 +48,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (bookedSeats.has(i)) seat.classList.add('booked');
 
-    seat.addEventListener('click', function () {
-      if (this.classList.contains('booked')) return;
+seat.addEventListener('click', function () {
+  if (this.classList.contains('booked')) return;
 
-      const num = parseInt(this.dataset.seatNumber);
-      if (selectedSeats.has(num)) {
-        selectedSeats.delete(num);
-        this.classList.remove('selected');
-      } else {
-        selectedSeats.add(num);
-        this.classList.add('selected');
-      }
+  const num = parseInt(this.dataset.seatNumber);
 
-      bookButton.disabled = selectedSeats.size === 0;
-    });
+  // Nếu đã chọn ghế này rồi thì bỏ chọn
+  if (selectedSeats.has(num)) {
+    selectedSeats.delete(num);
+    this.classList.remove('selected');
+  } else {
+    // Nếu đã chọn ghế khác trước đó, thì bỏ chọn ghế cũ
+    if (selectedSeats.size > 0) {
+      const prevSelected = Array.from(selectedSeats)[0];
+      const prevSeatEl = document.querySelector(`.seat[data-seat-number="${prevSelected}"]`);
+      if (prevSeatEl) prevSeatEl.classList.remove('selected');
+      selectedSeats.clear();
+    }
+
+    // Chọn ghế mới
+    selectedSeats.add(num);
+    this.classList.add('selected');
+  }
+
+  bookButton.disabled = selectedSeats.size === 0;
+});
+
 
     seatsContainers.appendChild(seat);
   }

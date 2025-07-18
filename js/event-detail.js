@@ -39,14 +39,34 @@ if (!event) {
   const startTime = new Date(event.start);
   const endTime = new Date(event.end);
 
-  let status = "";
-  if (now < startTime) {
-    status = (event.bookedSeats >= event.totalSeats) ? "Hết chỗ" : "Còn chỗ";
-  } else if (now >= startTime && now <= endTime) {
-    status = "Đang diễn ra";
-  } else {
-    status = "Đã kết thúc";
-  }
+let timeStatus = "";
+let seatStatus = "";
+
+// Xác định trạng thái thời gian
+if (now < startTime) {
+  timeStatus = "Sắp diễn ra";
+} else if (now >= startTime && now <= endTime) {
+  timeStatus = "Đang diễn ra";
+} else {
+  timeStatus = "Đã kết thúc";
+}
+
+// Chỉ kiểm tra tình trạng chỗ nếu sự kiện chưa kết thúc
+if (now < endTime) {
+  seatStatus = (event.bookedSeats >= event.totalSeats) ? "Hết chỗ" : "Còn chỗ";
+} else {
+  seatStatus = ""; // Sự kiện kết thúc thì không quan tâm chỗ
+}
+
+// Kết hợp nếu muốn:
+let status = timeStatus;
+if (seatStatus) status += ` - ${seatStatus}`;
+
+// Ví dụ output:
+// "Sắp diễn ra - Còn chỗ"
+// "Đang diễn ra - Hết chỗ"
+// "Đã kết thúc"
+
 
   document.getElementById("event-status").textContent = status;
 
